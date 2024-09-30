@@ -1,0 +1,34 @@
+name: reno-projects
+services: 
+  postgresql:
+    image: postgres:16.4-alpine
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+      - POSTGRES_DB=$DB_DATABASE
+    ports:
+      - $DB_LOCAL_PORT:$DB_DOCKER_PORT
+    volumes:
+      - db:/var/lib/postgres
+  app:
+    build: ./
+    image: reno-projects-app
+    depends_on:
+      - postgresql
+    command: npm run dev
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+    environment:
+      - DB_HOST=postgresql
+      - DB_USER=$DB_USER
+      - DB_PASSWORD=$DB_PASSWORD
+      - DB_NAME=$DB_DATABASE
+      - DB_PORT=$DB_DOCKER_PORT
+    stdin_open: true
+    tty: true
+volumes:
+  db:
