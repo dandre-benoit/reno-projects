@@ -11,7 +11,7 @@ The goal is to design, implement and document a basic RESTful API that manage re
 - DTO class validations and transformation
 - Custom global exception filter
   - For duplicate key value when creating or updating entities
-- Lists show only active entity and are ordered by id
+- Lists show only active entities with limited informations and are ordered by id
   - Inactive entity can still be edited
 
 ## Documentation

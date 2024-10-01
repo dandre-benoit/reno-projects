@@ -17,6 +17,7 @@ export class ProjectsService {
   findAll(): Observable<Project[]> {
     return from(
       this.projectsRepository.find({
+        select: ['id', 'name'],
         where: { active: true },
         order: { id: 'asc' }
       })
