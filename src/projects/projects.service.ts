@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateProjectDto } from '@/projects/dto/create-project.dto';
 import { UpdateProjectDto } from '@/projects/dto/update-project.dto';
 import { Project } from '@/projects/entities/project.entity';
-import { DeleteResult, Repository, UpdateResult } from 'typeorm';
+import { DeleteResult, QueryFailedError, Repository, UpdateResult } from 'typeorm';
 import { from, Observable } from 'rxjs';
 
 @Injectable()
@@ -16,7 +16,10 @@ export class ProjectsService {
 
   findAll(): Observable<Project[]> {
     return from(
-      this.projectsRepository.findBy({ active: true })
+      this.projectsRepository.find({
+        where: { active: true },
+        order: { id: 'asc' }
+      })
     );
   }
 
@@ -34,7 +37,7 @@ export class ProjectsService {
 
   update(id: number, updateProjectDto: UpdateProjectDto): Observable<UpdateResult> {
     return from(
-      this.projectsRepository.update({ id }, {
+      this.projectsRepository.update({ id }, <UpdateProjectDto>{
         ...updateProjectDto,
         updatedAt: new Date,
       })
