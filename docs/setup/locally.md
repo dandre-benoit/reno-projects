@@ -5,9 +5,10 @@
 ### Prerequises
 
 - File .env created and configured (see .env.local file)
-- Node.js installed
+- Node.js installed 
 - NPM installed
 - PostgreSQL installed and configured (see .env.local file)
+- [See technologies](../technologies/index.md)
 
 ### Endpoint
 ```bash

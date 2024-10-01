@@ -6,8 +6,7 @@
 
 - Docker installed
 - File .env created and configured (see .env.docker file)
-
-_* Version used at development_
+- [See technologies](../technologies/index.md)
 
 ### Endpoint
 ```bash
