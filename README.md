@@ -7,10 +7,6 @@
 - TypeORM
 - Typescript
 
-## Endpoint
-
-http://localhost:3000/
-
 ## Run with Docker
 
 ### Prerequises
@@ -51,6 +47,9 @@ $ npm run dev
 # watch mode
 $ npm run watch
 
+# build file for production mode
+$ npm run build
+
 # production mode
 $ npm run prod
 ```
@@ -66,4 +65,40 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
+```
+
+## Endpoints
+
+### Base URL  
+
+http://localhost:3000/api/
+
+### Projects
+
+```
+GET /projects
+GET /projects/:id 
+POST /projects
+PUT /projects/:id
+DELETE /projects/:id
+```
+
+### Clients
+
+```http
+GET /clients  
+GET /clients/:id  
+POST /clients  
+PUT /clients/:id  
+DELETE /clients/:id  
+```
+
+### Entrepreneurs
+
+```http
+GET /entrepreneurs  
+GET /entrepreneurs/:id  
+POST /entrepreneurs  
+PUT /entrepreneurs/:id  
+DELETE /entrepreneurs/:id  
 ```
