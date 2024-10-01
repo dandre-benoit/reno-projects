@@ -15,7 +15,7 @@ The goal is to design, implement and document a basic RESTful API that manage re
     - Use GIT to manage the code
 
 ## Extras
-- Importable Postman collection
+- Importable Postman collection JSON files
 - Project setup via .env file
     - With template files
 - Docker complete project setup
