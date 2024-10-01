@@ -11,7 +11,7 @@ export class GlobalExceptionFilter extends BaseExceptionFilter {
     if (exception instanceof QueryFailedError) {
       // Treats duplicate key value error message
       const detail: string | null = exception.driverError?.detail;
-      const [, duplicateKey] = detail?.match(/^Key \(([^)]+)\)=\(.+\) already exists.$/) ?? [];
+      const [, duplicateKey] = detail?.match(/^Key \("?([^")]+)"?\)=\(.+\) already exists.$/) ?? [];
       if (duplicateKey) {
         response
           .status(400)
