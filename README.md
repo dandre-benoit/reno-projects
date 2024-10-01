@@ -1,18 +1,21 @@
 # Renovation Projects
 
 ## Dependencies
-- Docker
+
 - Jest
 - Nest.js
-- PostgreSQL
+- TypeORM
 - Typescript
+
+## Endpoint
+
+http://localhost:3000/
 
 ## Run with Docker
 
 ### Prerequises
-- [Docker](https://docs.docker.com/engine/install/) (v4.34*)
 
-_* Tested on these versions_
+- [Docker](https://docs.docker.com/engine/install/) - v4.34
 
 ### Commands
 
@@ -29,11 +32,9 @@ $ docker compose up -w
 
 ### Prerequises
 
-- [Node.js](https://nodejs.org/en/download/package-manager) (v18.18*)
-- NPM (v10.8*)
-- PostgreSQL (v16.4*)
-
-_* Tested on these versions_
+- [Node.js](https://nodejs.org/en/download/package-manager) - v18.18
+- NPM - v10.8
+- PostgreSQL - v16.4
 
 ### Project setup
 
