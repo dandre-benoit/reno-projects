@@ -15,8 +15,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return "Renovation Project Management API"', () => {
+      expect(appController.getHome()).toBe('Renovation Project Management API');
     });
   });
 });
