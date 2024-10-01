@@ -28,7 +28,9 @@ The goal is to design, implement and document a basic RESTful API that manage re
 ## Missing
 - User entity
 - Contact entity
-- Add contacts relations to client and entrepreneur
+- Contract entity
+- Add contacts relation to client and entrepreneur
+- Add contracts relation to client and entrepreneur
 - Authentication
 - Pagination for the lists
 - Soft-deletes
