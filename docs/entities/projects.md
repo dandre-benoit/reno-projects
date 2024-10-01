@@ -6,10 +6,10 @@
 ```postgresql
 id: primary generated int
 name: unique varchar
-description: text|null
-budget: float|null
-startAt: timestamp|null
-endAt: timestamp|null
+description: nullable text
+budget: nullable float
+startAt: nullable timestamp
+endAt: nullable timestamp
 createdAt: timestamp = 'CURRENT_TIMESTAMP'
 updatedAt: timestamp = 'CURRENT_TIMESTAMP'
 active: boolean = true
@@ -27,7 +27,7 @@ GET /projects HTTP/1.1
 [
     {
         "id": 7,
-        "name": "My projet",
+        "name": "My project",
         "description": "Project description",
         "budget": 999999.99,
         "startAt": "2024-09-30T00:00:00.000Z",
@@ -36,7 +36,17 @@ GET /projects HTTP/1.1
         "updatedAt": "2024-10-01T05:33:05.262Z",
         "active": true
     }, 
-    ...
+    {
+        "id": 8,
+        "name": "Another project",
+        "description": "Project description",
+        "budget": 9999.99,
+        "startAt": "2024-09-30T00:00:00.000Z",
+        "endAt": "2024-10-08T00:00:00.000Z",
+        "createdAt": "2024-09-30T05:23:38.455Z",
+        "updatedAt": "2024-10-01T05:33:05.262Z",
+        "active": true
+    }
 ]
 ```
 
@@ -47,7 +57,6 @@ GET /projects/:id HTTP/1.1
 ```
 ##### Response
 ```json
-// GET /projects/7 HTTP/1.1
 {
     "id": 7,
     "name": "My project",
@@ -96,7 +105,6 @@ POST /projects HTTP/1.1
 PUT /projects/:id HTTP/1.1
 ```
 ```json
-// PUT /projects/7 HTTP/1.1
 {
     "description": "Project description updated",
 }
@@ -117,7 +125,6 @@ DELETE /projects/:id HTTP/1.1
 ```
 ##### Response
 ```json
-// DELETE /projects/7 HTTP/1.1
 {
     "raw": [],
     "affected": 1
