@@ -1,104 +1,12 @@
-# Renovation Projects
+# Renovation Project Management API
 
-## Dependencies
+## Description
+This is a technical test for the position **Senior Full Stack Developer** at **Soumission Rénovation**. 
+The goal is to design, implement and document a basic RESTful API that manage projects for renovation, by using a backend framework or a library in JavaScript or TypeScript and a database.
 
-- Jest
-- Nest.js
-- TypeORM
-- Typescript
+## Documentation
 
-## Run with Docker
+- [Entities](./docs/entities/index.md)
+- [Technologies](./docs/technologies/index.md)
+- [Project Setup](./docs/setup/index.md)
 
-### Prerequises
-
-- [Docker](https://docs.docker.com/engine/install/) - v4.34
-
-### Commands
-
-```bash
-# Run dev
-$ docker compose up
-
-# Run watch
-$ cd watch
-$ docker compose up -w
-```
-
-## Run localy
-
-### Prerequises
-
-- [Node.js](https://nodejs.org/en/download/package-manager) - v18.18
-- NPM - v10.8
-- PostgreSQL - v16.4
-
-### Project setup
-
-```bash
-$ npm install
-```
-
-### Compile and run the project
-
-```bash
-# development
-$ npm run dev
-
-# watch mode
-$ npm run watch
-
-# build file for production mode
-$ npm run build
-
-# production mode
-$ npm run prod
-```
-
-### Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Endpoints
-
-### Base URL  
-
-http://localhost:3000/api/
-
-### Projects
-
-```
-GET /projects
-GET /projects/:id 
-POST /projects
-PUT /projects/:id
-DELETE /projects/:id
-```
-
-### Clients
-
-```http
-GET /clients  
-GET /clients/:id  
-POST /clients  
-PUT /clients/:id  
-DELETE /clients/:id  
-```
-
-### Entrepreneurs
-
-```http
-GET /entrepreneurs  
-GET /entrepreneurs/:id  
-POST /entrepreneurs  
-PUT /entrepreneurs/:id  
-DELETE /entrepreneurs/:id  
-```
