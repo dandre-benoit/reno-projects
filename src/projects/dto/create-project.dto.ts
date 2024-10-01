@@ -24,4 +24,12 @@ export class CreateProjectDto {
     @IsBoolean()
     @IsOptional()
     active: boolean = true;
+
+    @IsNumber()
+    @IsOptional()
+    clientId: number;
+    
+    @IsNumber()
+    @IsOptional()
+    entrepreneurId: number;
 }

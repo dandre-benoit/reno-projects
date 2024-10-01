@@ -7,13 +7,11 @@ export class Project {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @OneToOne(() => Client)
-    @JoinColumn()
-    client: Client;
-    
-    @OneToOne(() => Entrepreneur)
-    @JoinColumn()
-    entrepreneur: Entrepreneur;
+    @Column({ select: false, nullable: true })
+    clientId: number
+
+    @Column({ select: false, nullable: true })
+    entrepreneurId: number
 
     @Column({ type: 'varchar', unique: true })
     name: string;
@@ -22,7 +20,7 @@ export class Project {
     description: string;
 
     @Column({ type: 'float', nullable: true })
-    budget: number;   
+    budget: number;
 
     @Column({ type: 'timestamp', nullable: true })
     startAt: Date;
@@ -38,4 +36,12 @@ export class Project {
 
     @Column({ type: 'boolean', default: true })
     active: boolean;
+
+    @OneToOne(() => Client)
+    @JoinColumn()
+    client: Client;
+
+    @OneToOne(() => Entrepreneur)
+    @JoinColumn()
+    entrepreneur: Entrepreneur;
 }

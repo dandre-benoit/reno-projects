@@ -17,7 +17,22 @@ export class ProjectsService {
   findAll(): Observable<Project[]> {
     return from(
       this.projectsRepository.find({
-        select: ['id', 'name'],
+        select: {
+          id: true,
+          name: true,
+          client: {
+            id: true, 
+            name: true
+          },
+          entrepreneur: {
+            id: true, 
+            name: true
+          }
+        },
+        relations: {
+          client: true,
+          entrepreneur: true
+        },
         where: { active: true },
         order: { id: 'asc' }
       })
@@ -26,7 +41,13 @@ export class ProjectsService {
 
   findOne(id: number): Observable<Project> {
     return from(
-      this.projectsRepository.findOneByOrFail({ id })
+      this.projectsRepository.findOneOrFail({
+        where: { id },
+        relations: {
+          client: true,
+          entrepreneur: true
+        }
+      })
     );
   }
 
