@@ -7,6 +7,8 @@
 id: primary generated int
 name: unique varchar
 description: nullable text
+clientId: foreign key clients
+entrepreneurId: foreign key entrepreneurs
 budget: nullable float
 startAt: nullable timestamp
 endAt: nullable timestamp
@@ -14,6 +16,10 @@ createdAt: timestamp = 'CURRENT_TIMESTAMP'
 updatedAt: timestamp = 'CURRENT_TIMESTAMP'
 active: boolean = true
 ```
+
+### Relations
+- [Client](../entities/clients.md)
+- [Entrepreneur](../entities/entrepreneurs.md)
 
 ### Enpoints
 
@@ -28,24 +34,20 @@ GET /projects HTTP/1.1
     {
         "id": 7,
         "name": "My project",
-        "description": "Project description",
-        "budget": 999999.99,
-        "startAt": "2024-09-30T00:00:00.000Z",
-        "endAt": "2024-10-08T00:00:00.000Z",
-        "createdAt": "2024-09-30T05:23:38.455Z",
-        "updatedAt": "2024-10-01T05:33:05.262Z",
-        "active": true
+        "client": null,
+        "entrepreneur": null
     }, 
     {
         "id": 8,
         "name": "Another project",
-        "description": "Project description",
-        "budget": 9999.99,
-        "startAt": "2024-09-30T00:00:00.000Z",
-        "endAt": "2024-10-08T00:00:00.000Z",
-        "createdAt": "2024-09-30T05:23:38.455Z",
-        "updatedAt": "2024-10-01T05:33:05.262Z",
-        "active": true
+        "client": {
+            "id": 1,
+            "name": "A client"
+        },
+        "entrepreneur": {
+            "id": 2,
+            "name": "A entrepreneur"
+        }
     }
 ]
 ```
@@ -66,7 +68,25 @@ GET /projects/:id HTTP/1.1
     "endAt": "2024-10-08T00:00:00.000Z",
     "createdAt": "2024-09-30T05:23:38.455Z",
     "updatedAt": "2024-10-01T05:33:05.262Z",
-    "active": true
+    "active": true,
+    "client": {
+        "id": 8,
+        "name": "Another client",
+        "phone": "(514)456-7890",
+        "address": "6546 rue ipsum, QC, Canada", 
+        "createdAt": "2024-09-30T05:23:38.455Z",
+        "updatedAt": "2024-10-01T05:33:05.262Z",
+        "active": true
+    },
+    "entrepreneur": {
+        "id": 8,
+        "name": "My entrepreneur",
+        "phone": "(514)456-7890",
+        "address": "6546 rue ipsum, QC, Canada",     
+        "createdAt": "2024-09-30T05:23:38.455Z",
+        "updatedAt": "2024-10-01T05:33:05.262Z",
+        "active": true
+    }
 }
 ```
 

@@ -25,8 +25,15 @@ The goal is to design, implement and document a basic RESTful API that manage re
 - Lists show only active entities with limited informations and are ordered by id
     - Inactive entity can still be edited
 
-## Documentation
+## Missing
+- User entity
+- Contact entity
+- Add contacts relations to client and entrepreneur
+- Authentication
+- Pagination for the lists
+- Test units
 
+## Documentation
 - [Entities](./docs/entities/index.md)
 - [Project Setup](./docs/setup/index.md)
 - [Technologies](./docs/technologies/index.md)

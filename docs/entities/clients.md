@@ -26,20 +26,10 @@ GET /clients HTTP/1.1
     {
         "id": 7,
         "name": "My client",
-        "phone": "(514)566-7990",
-        "address": "2436 rue dolor, QC, Canada", 
-        "createdAt": "2024-09-30T05:23:38.455Z",
-        "updatedAt": "2024-10-01T05:33:05.262Z",
-        "active": true
     }, 
     {
         "id": 8,
         "name": "Another client",
-        "phone": "(514)456-7890",
-        "address": "6546 rue ipsum, QC, Canada", 
-        "createdAt": "2024-09-30T05:23:38.455Z",
-        "updatedAt": "2024-10-01T05:33:05.262Z",
-        "active": true
     }
 ]
 ```
