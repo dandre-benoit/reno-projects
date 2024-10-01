@@ -8,6 +8,12 @@ export class Entrepreneur {
     @Column({ type: 'varchar', unique: true })
     name: string;
 
+    @Column({ type: 'varchar', nullable: true })
+    phone: string;
+
+    @Column({ type: 'varchar', nullable: true })
+    address: string;
+
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     createdAt: Date;
 

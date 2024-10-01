@@ -5,6 +5,14 @@ export class CreateEntrepreneurDto {
     @IsNotEmpty()
     name: string;
 
+    @IsString()
+    @IsOptional()
+    phone: string;
+
+    @IsString()
+    @IsOptional()
+    address: string;
+
     @IsBoolean()
     @IsOptional()
     active: boolean = true;
